@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        first number :
+        <input class="form-control" id="num1" />
+        <br>second number :
+        <input class="form-control" id="num2" />
+        <br>
+        <select id="mathtype">
+          <option value="add">addition</option>
+          <option value="sub">subtraction</option>
+          <option value="mul">multiplication</option>
+          <option value="div">division</option>
+        </select>
+        <br>
+        <br>
+        <button class="btn btn-primary" onclick="submit()">submit</button>
+        <br>
+        <br>
+        <input type="text" id="output">
+      </div>
+      <script>
+        function submit() {
+  var mathtype = document.getElementById('mathtype').value;
+  //Get the value of the select element..Correct the typo([])
+  var num1 = Number(document.getElementById('num1').value);
+  //Get the value of `num1` input and convert it to type `Number`
+  var num2 = Number(document.getElementById('num2').value);
+  //Get the value of `num2` input and convert it to type `Number`
+  if (mathtype == 'add') {
+    //Compare with `string` as value of select input will be of type string, you did not have variable `add` to be tested
+    document.getElementById('output').value = num1 + num2;
+  } else if (mathtype == 'sub') {
+    //Compare with `string` as value of select input will be of type string, you did not have variable `sub` to be tested
+    document.getElementById('output').value = num1 - num2;
+  } else if (mathtype == 'mul') {
+    //Compare with `string` as value of select input will be of type string, you did not have variable `mul` to be tested
+    document.getElementById('output').value = num1 * num2;
+  }else if (mathtype == 'div') {
+    //Compare with `string` as value of select input will be of type string, you did not have variable `mul` to be tested
+    document.getElementById('output').value = num1 / num2;
+  }
+}
+      </script>
+</body>
+</html>

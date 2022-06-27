@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Student Result </title>
+        <style>
+            table, th, td {
+              border:1px solid black;
+            }
+            </style>
+    </head>
+    <body>
+        <h1> Student Result </h1>
+        <form name="forum" onsubmit="return getReport()">
+            <table style="width:40%">
+                <tr>
+                    <th> Name: </th> <th> <input type="text" id="name1" ></th> 
+                </tr>
+                <tr>
+                    <th> English : </th> <th> <input type="text" id="eng" ></th> 
+                </tr>
+                <tr>
+                    <th> Maths: </th> <th> <input type="text" id="mathss" ></th>  
+                </tr>
+                <tr>
+                    <th> Physics: </th> <th> <input type="text" id="physs" > </th>  
+                </tr>
+                <tr>
+                    <th> Total Marks:  </th> <th> <input type="text" id="total" > </th>
+                </tr>
+                <tr>
+                    <th> <input type="submit" id="subb"  value="SUBMIT">  </th><th><input type="text" id="getavg" ></th>
+                </tr>
+            </table>
+        </form>
+        <!-- <p id="resname"></p> -->
+        <!-- <p id="getavg"></p> -->
+        <script>
+            function getReport() {
+    var name = document.getElementById('name1').value;
+    var eng = parseInt(document.getElementById('eng').value);
+    var mat = parseInt(document.getElementById('mathss').value);
+    var phy = parseInt(document.getElementById('physs').value);
+    var total = parseInt(document.getElementById('total').value);
+
+    var totalmarks = eng + mat + phy;
+    console.log(totalmarks);
+
+    var percentage = (totalmarks / total)*100;
+
+    document.getElementById('resname').innerHTML = name;
+    document.getElementById('getavg').value = percentage;
+    return false; //stop the form posting back
+}
+        </script>
+    </body>
+</html>
